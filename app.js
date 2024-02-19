@@ -207,3 +207,60 @@
 //   return productPrice <= money + creditMoney;
 // }
 // console.log(canBuy(macBook, userAge, userMoney, hasJob));
+
+//? Массивы
+// const tasks = ["Задача 1", "Задача 2", "Задача 3"];
+// console.log(tasks);
+
+// function pushToTask(el) {
+//   tasks.push(el);
+// }
+// pushToTask("wkwwk");
+// console.log(tasks);
+
+// function removeTask(el) {
+//   const index = tasks.indexOf(el);
+//   if (index === -1) {
+//     return;
+//   }
+//   return tasks.splice(index, 1);
+// }
+// removeTask("Задача 1");
+// console.log(tasks);
+
+// function transferTask(el) {
+//   const result = removeTask(el);
+//   if (!result) {
+//     return;
+//   }
+//   tasks.unshift(result[0]);
+// }
+// transferTask("Задача 3");
+// console.log(tasks);
+
+//? Деструктуризация
+// const userData = ["Alex", 18, "Krasnodar"];
+// const [userName, _, city] = userData;
+// console.log(userName, city);
+
+// const data = [1, 2, 3, 4, 5, 6];
+// const [one, two, ...others] = data;
+// console.log(one, two, others);
+
+//? Функция разбора URL
+// const url = "https://purpleschool.ru/course/javascript";
+// const url2 = "purpleschool.ru/course/javascript";
+// function spread(url) {
+//   const [protocol, _, host, ...path] = url.split("/");
+//   if (protocol === "https:" || protocol === "http:") {
+//     if (!host.includes(".")) {
+//       return;
+//     }
+//     console.log(protocol, _, host, path);
+//     console.log(protocol.split(":")[0]);
+//     console.log(host);
+//     console.log(`/${path.join("/")}`);
+//   }
+// }
+// console.log(spread(url));
+// console.log(spread(url2));
