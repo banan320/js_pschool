@@ -264,3 +264,119 @@
 // }
 // console.log(spread(url));
 // console.log(spread(url2));
+
+//? Циклы
+// const tasks = ["Задача 1", "Задача 2", "Задача 3"];
+// for (let i = 0; i < tasks.length; i++) {
+//   if (tasks[i] === "Задача 2") {
+//     continue;
+//   }
+//   console.log(tasks[i]);
+// }
+
+// const arr = ["!", "JS", "люблю", "Я"];
+// const resArr = [];
+// for (let i = arr.length - 1; i >= 0; i--) {
+//   resArr.push(arr[i]);
+// }
+// console.log(resArr.join(" "));
+
+// for (let i = 1; i < 5; i++) {
+//   console.log(`Цикл 1 - ${i}`);
+//   for (let j = 1; j < 5; j++) {
+//     console.log(`Цикл 2 - ${j}`);
+//   }
+// }
+
+// const tasks = [
+//   [1, "Задача 1"],
+//   [2, "Задача 2"],
+// ];
+
+// for (let i = 0; i < tasks.length; i++) {
+//   for (let j = 0; j < tasks[i].length; j++) {
+//     console.log(tasks[i][j]);
+//   }
+// }
+
+// let i = 1;
+// while (i < 5) {
+//   console.log(`Цикл 1 - ${i}`);
+//   i++;
+// }
+
+// const arr = [1, 4, 8, 7];
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > 5) {
+//     break;
+//   }
+//   console.log(arr[i]);
+// }
+// let i = 0;
+// while (arr[i] <= 5 && i < arr.length) {
+//   console.log(arr[i]);
+//   i++;
+// }
+// let j = 0;
+// do {
+//   console.log(j);
+//   j++;
+// } while (j < 2);
+
+// const arr = [1, 4, 8, 7];
+// for (let element of arr) {
+//   console.log(element);
+// }
+
+// for (let index in arr) {
+//   console.log(arr[index]);
+// }
+
+//? Расчёт итогового баланса
+// const openingBalance = 100;
+// const operations = [1000, -700, 300, -500, 10000];
+
+// function getBalance(arrayOfOperations, initialBalance) {
+//   let balance = initialBalance;
+//   for (const elem of arrayOfOperations) {
+//     balance += elem;
+//   }
+//   return balance;
+// }
+// console.log(getBalance(operations, openingBalance));
+
+// function balanceCheck(arrayOfOperations, initialBalance) {
+//   let balance = initialBalance;
+//   let isOk = true;
+//   for (const elem of arrayOfOperations) {
+//     balance += elem;
+//     if (balance < 0) {
+//       isOk = false;
+//       break;
+//     }
+//   }
+//   return isOk;
+// }
+// console.log(balanceCheck(operations, openingBalance));
+
+// function avarageOperations(arrayOfOperations) {
+//   let positiveCount = 0;
+//   let positiveSumm = 0;
+//   let negativeCount = 0;
+//   let negativeSumm = 0;
+
+//   for (const elem of arrayOfOperations) {
+//     if (elem > 0) {
+//       positiveCount++;
+//       positiveSumm += elem;
+//     }
+//     if (elem < 0) {
+//       negativeCount++;
+//       negativeSumm += elem;
+//     }
+//   }
+//   return [positiveSumm / positiveCount, negativeSumm / negativeCount];
+// }
+// console.log(avarageOperations(operations));
+
+//?
