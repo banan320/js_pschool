@@ -379,4 +379,31 @@
 // }
 // console.log(avarageOperations(operations));
 
-//?
+//? Функции высшего порядка
+// function add(a, b) {
+//   return a + b;
+// }
+// function sub(a, b) {
+//   return a - b;
+// }
+// function calculate(a, b, fn) {
+//   let res = fn(a, b);
+//   return res;
+// }
+// console.log(calculate(8, 2, add));
+// console.log(calculate(8, 2, sub));
+
+// function power(pow) {
+//   return function (num) {
+//     return num ** pow;
+//   };
+// }
+// const powerOfNum = power(3);
+// console.log(powerOfNum(5));
+// console.log(power(2)(5));
+// const powerOfTwo = power(2);
+// console.log(powerOfTwo(10));
+
+// const power = (pow) => (num) => num ** pow;
+// const powerOfFour = power(4);
+// console.log(powerOfFour(2));
