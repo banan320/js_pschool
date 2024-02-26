@@ -207,3 +207,246 @@
 //   return productPrice <= money + creditMoney;
 // }
 // console.log(canBuy(macBook, userAge, userMoney, hasJob));
+
+//? Массивы
+// const tasks = ["Задача 1", "Задача 2", "Задача 3"];
+// console.log(tasks);
+
+// function pushToTask(el) {
+//   tasks.push(el);
+// }
+// pushToTask("wkwwk");
+// console.log(tasks);
+
+// function removeTask(el) {
+//   const index = tasks.indexOf(el);
+//   if (index === -1) {
+//     return;
+//   }
+//   return tasks.splice(index, 1);
+// }
+// removeTask("Задача 1");
+// console.log(tasks);
+
+// function transferTask(el) {
+//   const result = removeTask(el);
+//   if (!result) {
+//     return;
+//   }
+//   tasks.unshift(result[0]);
+// }
+// transferTask("Задача 3");
+// console.log(tasks);
+
+//? Деструктуризация
+// const userData = ["Alex", 18, "Krasnodar"];
+// const [userName, _, city] = userData;
+// console.log(userName, city);
+
+// const data = [1, 2, 3, 4, 5, 6];
+// const [one, two, ...others] = data;
+// console.log(one, two, others);
+
+//? Функция разбора URL
+// const url = "https://purpleschool.ru/course/javascript";
+// const url2 = "purpleschool.ru/course/javascript";
+// function spread(url) {
+//   const [protocol, _, host, ...path] = url.split("/");
+//   if (protocol === "https:" || protocol === "http:") {
+//     if (!host.includes(".")) {
+//       return;
+//     }
+//     console.log(protocol, _, host, path);
+//     console.log(protocol.split(":")[0]);
+//     console.log(host);
+//     console.log(`/${path.join("/")}`);
+//   }
+// }
+// console.log(spread(url));
+// console.log(spread(url2));
+
+//? Циклы
+// const tasks = ["Задача 1", "Задача 2", "Задача 3"];
+// for (let i = 0; i < tasks.length; i++) {
+//   if (tasks[i] === "Задача 2") {
+//     continue;
+//   }
+//   console.log(tasks[i]);
+// }
+
+// const arr = ["!", "JS", "люблю", "Я"];
+// const resArr = [];
+// for (let i = arr.length - 1; i >= 0; i--) {
+//   resArr.push(arr[i]);
+// }
+// console.log(resArr.join(" "));
+
+// for (let i = 1; i < 5; i++) {
+//   console.log(`Цикл 1 - ${i}`);
+//   for (let j = 1; j < 5; j++) {
+//     console.log(`Цикл 2 - ${j}`);
+//   }
+// }
+
+// const tasks = [
+//   [1, "Задача 1"],
+//   [2, "Задача 2"],
+// ];
+
+// for (let i = 0; i < tasks.length; i++) {
+//   for (let j = 0; j < tasks[i].length; j++) {
+//     console.log(tasks[i][j]);
+//   }
+// }
+
+// let i = 1;
+// while (i < 5) {
+//   console.log(`Цикл 1 - ${i}`);
+//   i++;
+// }
+
+// const arr = [1, 4, 8, 7];
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > 5) {
+//     break;
+//   }
+//   console.log(arr[i]);
+// }
+// let i = 0;
+// while (arr[i] <= 5 && i < arr.length) {
+//   console.log(arr[i]);
+//   i++;
+// }
+// let j = 0;
+// do {
+//   console.log(j);
+//   j++;
+// } while (j < 2);
+
+// const arr = [1, 4, 8, 7];
+// for (let element of arr) {
+//   console.log(element);
+// }
+
+// for (let index in arr) {
+//   console.log(arr[index]);
+// }
+
+//? Расчёт итогового баланса
+// const openingBalance = 100;
+// const operations = [1000, -700, 300, -500, 10000];
+
+// function getBalance(arrayOfOperations, initialBalance) {
+//   let balance = initialBalance;
+//   for (const elem of arrayOfOperations) {
+//     balance += elem;
+//   }
+//   return balance;
+// }
+// console.log(getBalance(operations, openingBalance));
+
+// function balanceCheck(arrayOfOperations, initialBalance) {
+//   let balance = initialBalance;
+//   let isOk = true;
+//   for (const elem of arrayOfOperations) {
+//     balance += elem;
+//     if (balance < 0) {
+//       isOk = false;
+//       break;
+//     }
+//   }
+//   return isOk;
+// }
+// console.log(balanceCheck(operations, openingBalance));
+
+// function avarageOperations(arrayOfOperations) {
+//   let positiveCount = 0;
+//   let positiveSumm = 0;
+//   let negativeCount = 0;
+//   let negativeSumm = 0;
+
+//   for (const elem of arrayOfOperations) {
+//     if (elem > 0) {
+//       positiveCount++;
+//       positiveSumm += elem;
+//     }
+//     if (elem < 0) {
+//       negativeCount++;
+//       negativeSumm += elem;
+//     }
+//   }
+//   return [positiveSumm / positiveCount, negativeSumm / negativeCount];
+// }
+// console.log(avarageOperations(operations));
+
+//? Функции высшего порядка
+// function add(a, b) {
+//   return a + b;
+// }
+// function sub(a, b) {
+//   return a - b;
+// }
+// function calculate(a, b, fn) {
+//   let res = fn(a, b);
+//   return res;
+// }
+// console.log(calculate(8, 2, add));
+// console.log(calculate(8, 2, sub));
+
+// function power(pow) {
+//   return function (num) {
+//     return num ** pow;
+//   };
+// }
+// const powerOfNum = power(3);
+// console.log(powerOfNum(5));
+// console.log(power(2)(5));
+// const powerOfTwo = power(2);
+// console.log(powerOfTwo(10));
+
+// const power = (pow) => (num) => num ** pow;
+// const powerOfFour = power(4);
+// console.log(powerOfFour(2));
+
+//? Итерация в массиве
+// const score = [5, 10, 0, 15];
+// for (const [i, el] of score.entries()) {
+//   console.log(`Раунд ${i + 1}: очков ${el}`);
+// }
+
+// score.forEach((el, i) => console.log(`Раунд ${i + 1}: очков ${el}`));
+
+// const transavtionInUSD = [10, -7, 50, -10, 100];
+// const transactionInRUB = [];
+// for (const transaction of transavtionInUSD) {
+//   transactionInRUB.push(transaction * 90);
+// }
+// console.log(transactionInRUB);
+
+// const transactionInRUB2 = transavtionInUSD.map((transaction) => {
+//   return transaction * 90;
+// });
+// console.log(transactionInRUB2);
+
+// const operations = [10, -7, 50, -10, 100];
+// const positiveOperations = operations.filter((operation) => {
+//   return operation > 0;
+// });
+// console.log(positiveOperations);
+
+// const positiveRUBoperations = operations
+//   .filter((operation) => {
+//     return operation > 0;
+//   })
+//   .map((operation) => operation * 90);
+// console.log(positiveRUBoperations);
+
+// const prices = [
+//   [100, 200],
+//   [120, 100],
+//   [200, 350],
+// ];
+// const result = prices
+//   .map((product) => product[1] - product[0])
+//   .filter((price) => price > 0);
+// console.log(result);
