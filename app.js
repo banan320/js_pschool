@@ -450,3 +450,87 @@
 //   .map((product) => product[1] - product[0])
 //   .filter((price) => price > 0);
 // console.log(result);
+
+// const operations = [10, -7, 50, -10, 100];
+// const finalBalance = operations.reduce((acc, operation, i) => {
+//   console.log(`Итерация ${i}, acc: ${acc}, operation ${operation}`);
+//   return (acc += operation);
+// }, 0);
+// console.log(finalBalance);
+
+// const minElement = operations.reduce((acc, operation) => {
+//   if (operation > acc) {
+//     return acc;
+//   } else {
+//     return operation;
+//   }
+// }, 0);
+// console.log(minElement);
+
+// const arr = [2, 4, 4, 10];
+// const result = arr.reduce((acc, operation, i) => {
+//   if (i != arr.length - 1) {
+//     return acc + operation;
+//   }
+//   return (acc + operation) / arr.length;
+// }, 0);
+// console.log(result);
+
+// const arr = [2, 4, 4, 10];
+// let elGT5;
+// for (const el of arr) {
+//   if (el > 5) {
+//     elGT5 = el;
+//     break;
+//   }
+// }
+// elGT5 = arr.find((el) => el > 5);
+// let elGT5Index = arr.findIndex((el) => el < 0);
+// console.log(elGT5);
+// console.log(elGT5Index);
+
+// const arr = [2, 4, 4, 10, 20];
+// function some(el, arr) {
+//   let res = arr.find((elem) => elem === el);
+//   return res == undefined ? false : true;
+// }
+// console.log(some(5, arr));
+// console.log(arr.some((el) => el === 2));
+
+// const prices = [
+//   [2, 4],
+//   [3, 4],
+//   [10, [20, 50]],
+// ];
+// const res = prices.flat(2);
+// // console.log(res);
+// const res2 = prices.flatMap((el) => el.concat([1]));
+// console.log(res2);
+
+// const users = ["Вася", "Маша", "Катя", "Аня"];
+// console.log(users);
+// users.sort();
+// console.log(users);
+
+// const operations = [100, -300, -100, 50, 480];
+// // operations.sort((a, b) => a - b);
+// // console.log(operations);
+// operations.sort((a, b) => {
+//   if (a < b) {
+//     return 1;
+//   }
+//   if (a > b) {
+//     return -1;
+//   }
+// });
+// console.log(operations);
+
+// const arr = Array.from({ length: 5 }, (cur, i) => i + 1);
+// console.log(arr);
+
+// let arr = [1, 2, 3];
+// let res = arr
+//   .map((e) => [e * 2])
+//   .flat()
+//   .reduce((acc, el) => (acc -= el), 0);
+// console.log(res);
