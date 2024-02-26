@@ -407,3 +407,46 @@
 // const power = (pow) => (num) => num ** pow;
 // const powerOfFour = power(4);
 // console.log(powerOfFour(2));
+
+//? Итерация в массиве
+// const score = [5, 10, 0, 15];
+// for (const [i, el] of score.entries()) {
+//   console.log(`Раунд ${i + 1}: очков ${el}`);
+// }
+
+// score.forEach((el, i) => console.log(`Раунд ${i + 1}: очков ${el}`));
+
+// const transavtionInUSD = [10, -7, 50, -10, 100];
+// const transactionInRUB = [];
+// for (const transaction of transavtionInUSD) {
+//   transactionInRUB.push(transaction * 90);
+// }
+// console.log(transactionInRUB);
+
+// const transactionInRUB2 = transavtionInUSD.map((transaction) => {
+//   return transaction * 90;
+// });
+// console.log(transactionInRUB2);
+
+// const operations = [10, -7, 50, -10, 100];
+// const positiveOperations = operations.filter((operation) => {
+//   return operation > 0;
+// });
+// console.log(positiveOperations);
+
+// const positiveRUBoperations = operations
+//   .filter((operation) => {
+//     return operation > 0;
+//   })
+//   .map((operation) => operation * 90);
+// console.log(positiveRUBoperations);
+
+// const prices = [
+//   [100, 200],
+//   [120, 100],
+//   [200, 350],
+// ];
+// const result = prices
+//   .map((product) => product[1] - product[0])
+//   .filter((price) => price > 0);
+// console.log(result);
