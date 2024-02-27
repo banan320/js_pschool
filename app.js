@@ -534,3 +534,54 @@
 //   .flat()
 //   .reduce((acc, el) => (acc -= el), 0);
 // console.log(res);
+
+// const usrname = "Вася ыываыв ываыва ываыва Пупкин";
+// const name = usrname.slice(0, usrname.indexOf(" "));
+// const surname = usrname.slice(usrname.lastIndexOf(" ") + 1, usrname.length);
+// console.log(name + " " + surname);
+
+// const num1 = "89103235356";
+// const num2 = "+79103235356";
+// const num3 = "+7(910)3235356";
+// const num4 = "+7(910) 323-53-56";
+// const num5 = " +7(910) 323-53-56 ";
+// // не верные номера
+// const num1Error = "89103235";
+// const num2Error = "+7d910d323-53-56";
+// const num3Error = "9+7103235356";
+// const num4Error = "89103q35356";
+// function isNumber(num) {
+//   num = num.trim();
+//   num = num.replace("+7", "8");
+//   if (!num.startsWith("8")) {
+//     return false;
+//   }
+//   num = num.replaceAll("(", "");
+//   num = num.replaceAll(")", "");
+//   num = num.replaceAll(" ", "");
+//   num = num.replaceAll("-", "");
+//   if (num.length != 11) {
+//     return false;
+//   }
+//   let onlyNum = true;
+//   for (const char of num) {
+//     if (isNaN(char)) {
+//       onlyNum = false;
+//       break;
+//     }
+//   }
+//   return onlyNum;
+// }
+// console.log(isNumber(num1));
+// console.log(isNumber(num2));
+// console.log(isNumber(num3));
+// console.log(isNumber(num4));
+// console.log(isNumber(num5));
+// console.log("ddddddddddddddddddddddddddddd");
+// console.log(isNumber(num1Error));
+// console.log(isNumber(num2Error));
+// console.log(isNumber(num3Error));
+// console.log(isNumber(num4Error));
+
+// const card = "4564165651561456";
+// console.log(card.slice(-4).padStart(16, "*"));
