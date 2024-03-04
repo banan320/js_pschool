@@ -585,3 +585,194 @@
 
 // const card = "4564165651561456";
 // console.log(card.slice(-4).padStart(16, "*"));
+
+//? Объекты
+// const users = [
+//   { name: "Вася", age: 30 },
+//   { name: "Катя", age: 18 },
+//   { name: "Аня", age: 20 },
+//   { name: "Петя", age: 25 },
+// ];
+// const sortUsers = users.sort((a, b) => a.age - b.age);
+// console.log(sortUsers);
+
+// function sortArray(age) {
+//   return (a, b) => (a[age] > b[age] ? 1 : -1);
+// }
+// console.log(users.sort(sortArray("age")));
+
+//! Упражнение - преобразование объектов
+// const users = [
+//   {
+//     name: "Вася",
+//     surname: "Пупкин",
+//     age: 30,
+//     skills: ["Разработка", "DevOps"],
+//   },
+//   { name: "Катя", surname: "Белова", age: 18, skills: ["Дизайн"] },
+// ];
+// const fullNameUsers = users.map((user) => {
+//   // let fullName = `${user.name} ${user.surname}`;
+//   // // let fullName = user["name"] + " " + user["surname"];
+//   // let skillNum = user.skills.length;
+//   // return { fullName, skillNum };
+//   return {
+//     fullName: `${user.name} ${user.surname}`,
+//     skillNum: user.skills.length,
+//   };
+// });
+// console.log(fullNameUsers);
+
+//! Упражнение - кошелёк
+// const wallet = {
+//   balance: 0,
+//   operations: [],
+//   balanceIncrease: function (reason, sum) {
+//     this.balance += sum;
+//     this.operations.push({  reason,  sum });
+//     return true;
+//   },
+//   balanceReduction: function (reason, sum) {
+//     if (this.balance < sum) {
+//       console.log("Недостаточно средств!");
+//       return false;
+//     }
+//     this.balance -= sum;
+//     this.operations.push({ reason, sum: -sum });
+//     return true;
+//   },
+//   numberOperations: function () {
+//     return `Количество операций: ${this.operations.length}`;
+//   },
+// };
+// console.log(wallet.balanceIncrease("Зарплата", 60000));
+// console.log(wallet.numberOperations());
+// console.log(wallet.balanceIncrease("Шабашка", 15000));
+// console.log(wallet.numberOperations());
+// console.log(wallet.balanceReduction("Налог", 130000));
+// console.log(wallet.numberOperations());
+// console.log(wallet.balanceReduction("Покупка хлеба", 13000));
+// console.log(wallet.numberOperations());
+// console.log(wallet.balance);
+// console.log(wallet.operations);
+// // console.log(wallet);
+
+// const balance = 7;
+// const wallet = {
+//   balance,
+//   operations: [],
+// };
+
+// let cities = {
+//   msk: {
+//     let: 200,
+//     temp: 25,
+//   },
+//   spb: {
+//     lt: 100,
+//     temp: 20,
+//   },
+// };
+// let sumTemp = 0;
+// // let citiesCount = 0;
+// // for (const key in cities) {
+// //   citiesCount++;
+// //   sumTemp += cities[key].temp;
+// // }
+// let citiesCount = Object.keys(cities).length;
+// // for (const key in cities) {
+// //   sumTemp += cities[key].temp;
+// // }
+// // console.log(sumTemp / citiesCount);
+// for (const key of Object.keys(cities)) {
+//   sumTemp += cities[key].temp;
+// }
+// console.log(sumTemp / citiesCount);
+
+// let user = {
+//   name: "Vasya",
+//   age: 40,
+//   city: "Moskow",
+// };
+// const { age, ...userWithouAge } = user;
+// // console.log(age);
+// // console.log(userWithouAge);
+// const additionalData = {
+//   skills: ["Разработка", "Дизайн"],
+//   creditCard: "2323-23232-2322323",
+// };
+// // user.skills = additionalData.skills;
+// // console.log(user);
+// user = {
+//   ...user,
+//   ...additionalData,
+// };
+// console.log(user);
+
+// const cities = {
+//   msk: {
+//     temp: {
+//       celcius: 25,
+//     },
+//   },
+//   spb: {
+//     temp: {},
+//   },
+// };
+// const city = "msk";
+// if (cities[city] && cities[city].temp) {
+//   console.log(cities[city].temp.celcius);
+// }
+// console.log(cities.spb?.temp?.celcius);
+
+//! Упражнение - склад
+// const warehouse = {
+//   goods: [],
+//   findGoodById: function (id) {
+//     return this.goods.find((g) => g.id == id);
+//   },
+//   addGood: function (good) {
+//     const existedGood = this.findGoodById(good.id);
+//     if (existedGood) {
+//       console.log("Товар уже есть на складе");
+//       return;
+//     }
+//     this.goods.push(good);
+//   },
+//   getWeightKg: function () {
+//     return this.goods.reduce(
+//       (acc, el) => (acc += el.weight?.kg ? el.weight.kg : 0),
+//       0
+//     );
+//   },
+// };
+
+// /* Товары */
+// const car = {
+//   id: 1,
+//   weight: {
+//     kg: 1000,
+//   },
+//   brand: "Ford",
+// };
+
+// const chair = {
+//   id: 2,
+//   weight: {
+//     kg: 20,
+//   },
+// };
+
+// const paper = {
+//   id: 3,
+//   color: "red",
+// };
+// warehouse.addGood(car);
+// warehouse.addGood(chair);
+// warehouse.addGood(car);
+// warehouse.addGood(paper);
+// console.log(warehouse.goods);
+// console.log(warehouse.findGoodById(1));
+// console.log(warehouse.getWeightKg());
+
+//?
