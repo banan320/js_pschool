@@ -1,3 +1,4 @@
+"use strict";
 // let a = 1;
 // console.log(a);
 // a = "test";
@@ -775,4 +776,58 @@
 // console.log(warehouse.findGoodById(1));
 // console.log(warehouse.getWeightKg());
 
-//?
+//? Пример использования this
+// function addNum(n1, n2) {
+//   console.log(this);
+//   return n1 + n2;
+// }
+// addNum();
+// const addNum2 = (n1, n2) => {
+//   console.log(this);
+//   return n1 + n2;
+// };
+// // addNum2();
+// const user = {
+//   name: "Вася",
+//   surname: "Пупкин",
+//   getFullName: function () {
+//     console.log(this);
+//     return this.name + " " + this.surname;
+//   },
+// };
+// // user.getFullName();
+// const user2 = {
+//   name: "Марина",
+//   surname: "Катц",
+// };
+// user2.getFullName = user.getFullName;
+// user2.getFullName();
+// const getFullName = user2.getFullName;
+// getFullName();
+
+//! Объект в объекте
+// const company = {
+//   name: "ООО Агро",
+//   employees: [
+//     {
+//       name: "Света",
+//       getName: function () {
+//         return console.log(this.name);
+//       },
+//     },
+//   ],
+//   ceo: {
+//     name: "Вася",
+//     getName: function () {
+//       return console.log(this.name);
+//     },
+//   },
+//   getName: function () {
+//     return console.log(this.name);
+//   },
+// };
+// company.getName();
+// company.ceo.getName();
+// company.employees.map((employee) => employee.getName());
+
+//? Управление this
