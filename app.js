@@ -831,3 +831,118 @@
 // company.employees.map((employee) => employee.getName());
 
 //? Управление this
+// const audi = {
+//   make: "Audi",
+//   model: "A3",
+//   year: 2021,
+//   damages: [],
+//   addDamage(part, rate) {
+//     console.log(
+//       `У авто ${this.make} ${this.model} ${this.year} добавлено повреждение:- ${part} со степенью ${rate}`
+//     );
+//     this.damages.push({
+//       part,
+//       rate,
+//     });
+//   },
+// };
+// // audi.addDamage("Капот", 1);
+// const bmw = {
+//   make: "BMW",
+//   model: "X5",
+//   year: 2022,
+//   damages: [],
+// };
+// // bmw.addDamage = audi.addDamage;
+// // bmw.addDamage("Бампер", 2);
+// const addDamageFunc = audi.addDamage;
+// // addDamageFunc("Пороги", 3);
+// addDamageFunc.call(bmw, "Пороги", 3);
+// // addDamageFunc.call(audi, "Днище", 2);
+// addDamageFunc.apply(audi, ["Крыша", 5]);
+// console.log(audi);
+
+// const audi = {
+//   make: "Audi",
+//   model: "A3",
+//   damages: [],
+// };
+// const carManipulation = {
+//   addDamages(part, rate) {
+//     this.damages.push({ part, rate });
+//     console.log(`Добавили повреждение на ${this.make} ${this.model}`);
+//   },
+// };
+// const addDamageAudi = carManipulation.addDamages.bind(audi);
+// addDamageAudi("Крыло", 3);
+// // console.log(audi);
+
+// const addDamageAudiRoof = carManipulation.addDamages.bind(audi, "Крыша");
+// addDamageAudiRoof(5);
+// console.log(audi);
+
+//! Упражнение - управление this
+// function removePassword(reset) {
+//   if (reset) {
+//     this.password = undefined;
+//   } else {
+//     this.password = "1";
+//   }
+// }
+// const vasya = {
+//   name: "Vasya",
+//   id: 2,
+//   password: "sadfsdf",
+// };
+// // const removePassVasya = removePassword.bind(vasya);
+// // removePassVasya(true);
+// // const removePassVasya = removePassword.bind(vasya,true);
+// // removePassVasya();
+// // const removePassVasya = removePassword;
+// // removePassword.call(vasya, true);
+// removePassword.apply(vasya, [true]);
+// console.log(vasya);
+
+//? IIFE
+// (function () {
+//   console.log("Start IIFE");
+// })();
+
+//? Замыкания
+// function changeBalance() {
+//   let balance = 0;
+//   return function (sum) {
+//     balance += sum;
+//     console.log(balance);
+//   };
+// }
+// const change = changeBalance();
+// change(100);
+// change(-50);
+// change(200);
+
+// const userInfo = {
+//   balance: 0,
+//   operations: 0,
+//   increase(sum) {
+//     this.balance += sum;
+//     this.operations++;
+//   },
+// };
+// function user() {
+//   const userObj = {
+//     balance: 0,
+//     operations: 0,
+//     increase(sum) {
+//       this.balance += sum;
+//       this.operations++;
+//     },
+//   };
+//   return function () {
+//     return userObj;
+//   };
+// }
+// const user1 = user();
+// user1().increase(100);
+// user1().increase(100);
+// console.log(user1());
