@@ -10,20 +10,10 @@
   <body style="background-color: #1c1b21; text-align: center">
     <img src="./logo.svg" alt="" />
     <div class="panel">I love this!</div>
-    <input class="input" />
-    <button class="button">Change</button>
+    <input class="input" onkeydown="inputChanged(event)" />
+    <button class="button" onclick="submitForm()">Change</button>
     <div class="notification notification_hidden">Changed!</div>
-    <div class="one">
-      <span>Элемент 1</span>
-    </div>
-    <div class="one">
-      <span>Элемент 2</span>
-    </div>
-    <div id="two">Элемент 3</div>
-    <div>
-      <span user-id="4">Элемент 4</span>
-      <span user-id="5">Элемент 5</span>
-    </div>
+    <div class="test"></div>
     <script src="./indexDom.js"></script>
     <script src="./app.js"></script>
   </body>
